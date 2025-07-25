@@ -1,0 +1,173 @@
+<html>
+<script>
+    </script>
+<body>
+    this is a heading
+    <table>
+        <tr>
+            <td>TASK-1</td>
+            <td>12-12-2025</td>
+            <td id="todo-1">PENDING</td>
+            <td>
+                <button id="progBtn1" onclick="test(1)">IN-PROGRESS</button>
+                <button id="completeBtn1" onclick="test(1)">COMPLETED</button>
+            </td>
+        </tr>
+        <tr>
+            <td>TASK-1</td>
+            <td>12-12-2025</td>
+            <td id="todo-2">PENDING</td>
+            <td>
+                <button id="progBtn2" onclick="test(2)">IN-PROGRESS</button>
+                <button id="completeBtn2" onclick="test(2)">COMPLETED</button>
+            </td>
+        </tr>
+        <tr>
+            <td>TASK-1</td>
+            <td>12-12-2025</td>
+            <td id="todo-3">PENDING</td>
+            <td>
+                <button id="progBtn3" onclick="test(3)">IN-PROGRESS</button>
+                <button id="completeBtn3" onclick="test(3)">COMPLETED</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function test(a){
+            console.log(document.getElementById("todo-"+a));
+            document.getElementById("todo-"+a).innerText="IN-PROGRESS";
+            document.getElementById("progBtn"+a).disabled =true;
+            document.getElementById("completeBtn"+a).disabled =false;
+
+            
+
+        }
+
+        console.log(document.getElementById("1"));
+
+        var trList = document.getElementsByTagName("tr");
+        for(var i=0;i<trList.length;i++){
+            var trEle = document.getElementsByTagName("tr")[i];
+            var statusEleTxt = trEle.childNodes[5].innerText;
+            var btnTdList = trEle.childNodes[7].childNodes;
+            if(statusEleTxt == 'PENDING'){
+                if(btnTdList[1].innerText == 'IN-PROGRESS'){
+
+                }
+                if(btnTdList[3].innerText == 'COMPLETED'){
+                    btnTdList[3].disabled = true;
+                }
+            }else if(statusEleTxt == 'IN-PROGRESS'){
+                if(btnTdList[1].innerText == 'IN-PROGRESS'){
+                    btnTdList[1].disabled = true;
+                }
+                if(btnTdList[3].innerText == 'COMPLETED'){
+                    
+                }
+            }else if(statusEleTxt == 'COMPLETED'){
+                if(btnTdList[1].innerText == 'IN-PROGRESS'){
+                    btnTdList[1].disabled = true;
+                }
+                if(btnTdList[3].innerText == 'COMPLETED'){
+                    btnTdList[1].disabled = true;
+                }
+            }
+        }
+
+/*
+        const a=100;
+        let b=10;
+        
+        {
+            let b=100; //illegal shadowing
+            console.log(b);//100
+        }
+        console.log(b);//10
+        // test();
+        // function test(){
+        //     var b=10;
+        // }
+        */
+        
+        // console.log(a);
+        /*
+        //scope chain
+        function func1(){
+            test();
+            function test(){
+                console.log(b);//10
+            }
+        }
+        var b=10;
+        func1();
+        console.log(b);//10
+*/
+
+        /*
+        var p1 = {name:"SATYA", dob:"12-12-1213",
+            address:{
+                doorNo:"12-12",
+                street:"vizag",
+                village:"vizag",
+                pincode:"5300001"
+            }
+        };
+
+        var p2 = {name:"RAM", dob:"11-11-1213",
+            address:{
+                doorNo:"11-11",
+                street:"vizag",
+                village:"vizag",
+                pincode:"5300011"
+            }
+        };
+
+        var p3 = {name:"HARI", dob:"10-10-1213",
+            address:{
+                doorNo:"10-10",
+                street:"vizag",
+                village:"vizag",
+                pincode:"5300010"
+            }
+        };
+
+        var personsList =[];
+        personsList.push(p1);
+        personsList.push(p2);
+        personsList.push("TEST STRING");
+        
+        for(var i=0;i<personsList.length;i++){
+            console.log(personsList[i].name);
+        }
+        
+        console.log(personsList);
+        */
+/*
+        console.log(z);
+        x=5;
+        y=6;
+        var add =function(a,  b){
+            var ans = a+b;
+            return ans;
+        }
+        var addFunc= add();
+        var z= mul(x,y);
+        console.log(z);
+        
+        function mul(a,b){
+            var sum=0;
+            for(var i=0;i<b;i++){
+                sum = add(sum,a);
+            }
+            var res=sum;
+            return res;
+            
+        }
+*/
+    </script>
+</body>
+</html>
+
