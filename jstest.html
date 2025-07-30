@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+             function test(){
+                var a =4;
+                function demo(){
+                    console.log(a);
+                }
+                return demo;
+            }
+            var k = test();
+            console.log(k);//
+            //console.log(a);//
+            k();
+            /*
+            function test(){
+                var a =4;
+                function demo(){
+                    console.log(a);//
+                }
+                demo();
+            }
+            test();
+            */
+
+
+
+            // function testFunc(){
+            //     console.log("this is from testFunc()");
+            // }
+            // for(i=1;i<=10;i++){
+            //     console.log("TEST:"+i);
+            //     setTimeout(testFunc,i*1000);
+            // }
+            // wait for 1 sec and executes the testFunc
+            // after 1 sec executes the testFunc
+
+        </script>
+    </body>
+</html>
