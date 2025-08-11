@@ -37,25 +37,28 @@
     console.log("TEST-1");
     </script>
   <table id="todoTable">
+    <thead>
       <tr>
         <th>ID</th>
         <th>ToDo Desc</th>
         <th>Target Date</th>
         <th>Status</th>
       </tr>
+      </thead>
     <tbody>
+
     </tbody>
   </table>
   <script>
     var todoList=[{
-                    todoId:100,
+                    todoId:1,
                     todoDesc : "Read Page 6",
                     targetDate : "2025-07-30 11:35",
                     todoStatus : "PENDING",
                     createDate : "2025-07-29 10:00"
                 },
                 {
-                    todoId:7,
+                    todoId:2,
                     todoDesc : "Write a document",
                     targetDate : "2025-07-30 12:40",
                     todoStatus : "COMPLETE",
@@ -106,12 +109,15 @@
         newTodoTr.appendChild(newTodoTargetDateTd);
         newTodoTr.appendChild(newTodoStatusTd);
 
-        var todoTable = document.getElementById("todoTable");
-        todoTable.appendChild(newTodoTr);
+        //fix done by Yogeeswar to stop the repetition of cells
+        var todoTableBody = document.getElementById("todoTable").getElementsByTagName("tbody")[0];
+        todoTableBody.appendChild(newTodoTr);
     }
-
+    //fix done by Yogeeswar to stop the repetition of cells
     function renderTodoItems(todoList){
-        todoList.map(renderListTable);
+      var todoTable = document.getElementById("todoTable").getElementsByTagName("tbody")[0];
+      todoTable.innerHTML = "";
+      todoList.map(renderListTable);
     }
     renderTodoItems(todoList);
 
